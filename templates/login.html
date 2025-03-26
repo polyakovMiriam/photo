@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>התחברות</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    <div class="container">
+        <h2>התחברות</h2>
+        <form method="POST" action="{{ url_for('auth.login') }}">
+            <input type="text" name="username" placeholder="שם משתמש" required>
+            <input type="password" name="password" placeholder="סיסמה" required>
+            <button type="submit">התחבר</button>
+        </form>
+        <a href="{{ url_for('auth.register') }}" class="register-link">
+            עדיין לא נרשמתם? הירשמו כאן
+        </a>
+    </div>
+</body>
+</html>

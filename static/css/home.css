@@ -1,0 +1,83 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            text-align: center !important;;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            color: #2a4d69;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .intro-text {
+            background-color: #eaf6ff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+
+        .services, .gallery-preview {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+        }
+
+        .service {
+            margin: 15px 0;
+        }
+
+        .gallery-preview-images img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-preview-images img:hover {
+            transform: scale(1.05);
+        }
+
+        .green {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .green:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            background-color: black; /* אפשר לשנות את הצבע של החיצים */
+        }
+        .carousel-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+        }
+

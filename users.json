@@ -1,0 +1,26 @@
+{
+    "mally": {
+        "password": "scrypt:32768:8:1$TXHtgGZlAsP6Sxmx$c07e0462644d69ba1e38e6db31cd0c0ad81863bb1009a49a42cafeba4f8bee391a3de1b1b3d1d406c0336603cb36668e8fd52fa67942b64e4c5b945bf5946a46"
+    },
+    "yossi": {
+        "password": "scrypt:32768:8:1$uqW5VVY4MKLsQmps$a3127f0db6b31c6d9c6b76071765cf944f416c55ca97925b5c6de385d4b68e57ea3f1f2268b76daf3b2fead1c9e37880e15bd2de7a92a3b85f31ecb2735fb73a"
+    },
+    "יעל": {
+        "password": "scrypt:32768:8:1$UVw4KPAt46q8J1ST$eb478f64834db8ca394d485d521e1784610c2c25c5df3a3f75c9c16b69e3ece460ceadc77da596966f24078a3b1b9724aa3359fc0827fbfe834dfccf6b36f115"
+    },
+    "אמא": {
+        "password": "scrypt:32768:8:1$IgA5sJQh4YGaHaO1$3a912a48876770a6bceb1a2b8743847884c0e1d27aaae31c2e728c8a63f93eb90870c77c8958488ac0adac42de6f6c552a90a0e58f8f8d10d8198d9ce92ae135",
+        "email": "5714351@gmail.com",
+        "address": "שירת הים 8l"
+    },
+    "mimi": {
+        "password": "scrypt:32768:8:1$ZHkRbZJY2uyeOLEH$1807830a57523edc7849fe0421911395fff5bd5a8f639be2f3b8d6c71b01ef99d60cb964eb941a9fee7a5dc77c7ecd0cc17246ecebe5e85f797759ed8ec5d885",
+        "email": "5714351@gmail.com",
+        "address": "שירת הים 8l"
+    },
+    "jj": {
+        "password": "scrypt:32768:8:1$8gUt31TMnQl3oalq$806bc993d6f39b7dccd1aed3760065c2c662c3069515c60b270e54103633495d75db432a5c3aaec4513a590c8e317b4822f643727a687d8f1a01c6a535f4c4c9",
+        "email": "kk@ddjj",
+        "address": "jj"
+    }
+}

@@ -1,0 +1,93 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סל קניות</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <section class="cart">
+        <h1>סל הקניות שלך</h1>
+        {% if cart_items %}
+            <ul class="cart-items">
+                {% for item in cart_items %}
+                    <li class="cart-item">
+                        <div class="cart-item-image">
+                            <img src="{{ url_for('static', filename=item['image']) }}" alt="{{ item['name'] }}">
+                        </div>
+                        <div class="cart-item-details">
+                            <h3>{{ item['name'] }}</h3>
+                            <p class="price">מחיר ליחידה: ₪{{ item['price'] }}</p>
+                            <div class="quantity-control">
+                                <span class="quantity">{{ item['quantity'] }}</span>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="cart-actions">
+                <p>סה"כ לתשלום: ₪{{ total_price }}</p>
+                <div id="paypal-button-container">ייי</div>
+            </div>
+        {% else %}
+            <p>סל הקניות שלך ריק כרגע.</p>
+        {% endif %}
+
+    </section>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=ILS"></script>
+    <script>
+         // PayPal Integration
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '{{ total_price }}'  // סה"כ לתשלום בשקלים
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    fetch('/process_order', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ orderID: details.id })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert('התשלום הצליח! תודה רבה.');
+                        window.location.href = '/confirmation';
+                    });
+                });
+            }
+        }).render('#paypal-button-container');
+
+
+    </script>
+</body>
+</html>
+
+
+    <script>
+        function updateQuantity(productId, change) {
+    fetch(`/update_cart/${productId}/${change}`, { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload(); // אם העדכון הצליח, טוענים מחדש את הדף
+            } else {
+                alert('לא ניתן לעדכן את הכמות');
+            }
+        });
+}
+
+    </script>
+</body>
+</html>

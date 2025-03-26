@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/images.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>גלריית תמונות</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h1>גלריית תמונות</h1>
+    <div class="gallery">
+        <img src="{{ url_for('static', filename='images/image (5).jpg') }}" alt="תמונה 1">
+        <img src="{{ url_for('static', filename='images/image (6).jpg') }}" alt="תמונה 2">
+        <img src="{{ url_for('static', filename='images/image (7).jpg') }}" alt="תמונה 1">
+        <img src="{{ url_for('static', filename='images/image (8).jpg') }}" alt="תמונה 2">
+        <img src="{{ url_for('static', filename='images/image (10).jpg') }}" alt="תמונה 1">
+    </div>
+</body>
+</html>

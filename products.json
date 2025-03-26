@@ -1,0 +1,67 @@
+
+[
+  {
+    "id": 1,
+    "name": "הדפסת תמונה בגודל A4",
+    "description": "הדפסת תמונה איכותית בגודל A4.",
+    "price": 20,
+    "category": "holidays",
+    "image": "images/image (1).jpg"
+  },
+  {
+    "id": 2,
+    "name": "אלבום תמונות דיגיטלי",
+    "description": "אלבום תמונות דיגיטלי מותאם אישית.",
+    "price": 80,
+    "category": "holidays",
+    "image": "images/image (2).jpg"
+  },
+  {
+    "id": 3,
+    "name": "מגנט מעוצב עם תמונה",
+    "description": "מגנט עם תמונה מעוצבת אישית.",
+    "price": 15,
+    "category": "gifts",
+    "image": "images/image (3).jpg"
+  },
+  {
+    "id": 4,
+    "name": "קנבס בגודל 30x40 ס\"מ",
+    "description": "תמונה מודפסת על קנבס בגודל 30x40 ס\"מ.",
+    "price": 120,
+    "category": "gifts",
+    "image": "images/image (4).jpg"
+  },
+  {
+    "id": 5,
+    "name": "פאזל אישי עם תמונה",
+    "description": "פאזל מותאם אישית עם תמונה.",
+    "price": 70,
+    "category": "gifts",
+    "image": "images/image (5).jpg"
+  },
+    {
+    "id": 6,
+    "name": "פאזל משפחתי עם תמונה",
+    "description": "פאזל מותאם משפחתי עם תמונה.",
+    "price": 40,
+     "category": "gifts",
+    "image": "images/image (6).jpg"
+  },
+    {
+    "id": 7,
+    "name": "פאזל אישי עם תמונה",
+    "description": "פאזל מותאם אישית עם תמונה.",
+    "price": 56,
+      "category": "holidays",
+    "image": "images/image (7).jpg"
+  },
+    {
+    "id": 8,
+    "name": "פאזל אישי עם תמונה",
+    "description": "פאזל מותאם אישית עם תמונה.",
+    "price": 70,
+      "category": "holidays",
+    "image": "images/image (8).jpg"
+  }
+]

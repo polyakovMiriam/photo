@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חנות פוטו</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/products.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <h1>המוצרים שלנו</h1>
+    <div class="product-grid">
+        {% for product in products %}
+            <div class="product-item">
+                <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
+                <h2>{{ product['name'] }}</h2>
+                <p>{{ product['description'] }}</p>
+                <p><strong>{{ product['price'] }} ש"ח</strong></p>
+               <a href="{{ url_for('products.product_detail', product_id=product['id']) }}">
+                <button>צפה בפרטים</button>
+                </a>
+
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

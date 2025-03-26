@@ -1,0 +1,72 @@
+[
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/jpg"
+        ]
+    },
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/3.JPG"
+        ]
+    },
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/jpg"
+        ]
+    },
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/jpg"
+        ]
+    },
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/jpg"
+        ]
+    },
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/jpg",
+            "static/uploads/jpg",
+            "static/uploads/3.JPG"
+        ]
+    },
+    {
+        "product_id": 4,
+        "images": [
+            "static/uploads/jpg",
+            "static/uploads/jpg",
+            "static/uploads/3.JPG"
+        ]
+    },
+    {
+        "product_id": 4,
+        "images": [
+            "static/uploads/jpg",
+            "static/uploads/jpg",
+            "static/uploads/3.JPG"
+        ]
+    },
+    {
+        "product_id": 7,
+        "images": [
+            "static/uploads/jpg",
+            "static/uploads/jpg",
+            "static/uploads/3.JPG"
+        ]
+    },
+    {
+        "product_id": 2,
+        "images": [
+            "static/uploads/jpg",
+            "static/uploads/jpg",
+            "static/uploads/3.JPG"
+        ]
+    }
+]

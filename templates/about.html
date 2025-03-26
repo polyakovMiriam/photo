@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מי אנחנו?</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <section class="about">
+        <div class="container">
+            <h1>מי אנחנו</h1>
+            <p>אנחנו קבוצת צלמים מקצועיים המציעה מגוון שירותי צילום לכל מטרה <br>הצילום הוא לא רק עבודה עבורנו, אלא גם תשוקה אמיתית, ואנחנו אוהבים ליצור תמונות שיביאו ללקוחותינו ערך אמיתי</p>
+            <div class="image">
+                <img src="{{ url_for('static', filename='images/about_team.jpg') }}" alt="הצוות שלנו">
+            </div>
+        </div>
+
+        <div class="vision">
+            <h2>החזון שלנו</h2>
+            <p>החזון שלנו הוא לא רק לספק שירותי צילום, אלא גם ליצור חוויות בלתי נשכחות עבור לקוחותינו. אנו עובדים עם מיטב הציוד הטכנולוגי ומבצעים את הצילומים בסטנדרטים הגבוהים ביותר</p>
+        </div>
+    </section>
+
+</body>
+</html>

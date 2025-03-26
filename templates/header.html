@@ -1,0 +1,27 @@
+<!-- header.html -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('cart.cart') }}">סל קניות</a></li>
+            <li><a href="/">דף הבית</a></li>
+            <li><a href="/about">עלינו</a></li>
+            <li><a href="/gallery">קטלוגים</a></li>
+            <li><a href="{{ url_for('contact.contact') }}">צור קשר</a></li>
+             <li class="dropdown">
+            <a href="#">מוצרים</a>
+            <ul class="dropdown-menu">
+                <li><a href="/products?category=holidays">חגים</a></li>
+                <li><a href="/products?category=gifts">מתנות</a></li>
+                <li><a href= "/products">לכל המוצרים</a></li>
+            </ul>
+        </li>
+
+             {% if 'username' in session %}
+                <li><a href="/logout">התנתקות</a></li>
+            {% else %}
+                <li><a href="/login">התחברות</a></li>
+
+            {% endif %}
+        </ul>
+    </nav>
+</header>

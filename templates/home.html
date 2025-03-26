@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חנות צילום מקצועית</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <section class="hero">
+        <h1>ברוכים הבאים לחנות הפוטו שלנו</h1>
+        <p>מבחר מתנות להדפסה מקצועיות באיכות גבוהה לכל מטרה</p>
+        <a class = "green" href="{{ url_for('home.gallery') }}" class="cta-button">לקטלוג המלא</a>
+    </section>
+
+
+
+  <section class="carousel-container">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-interval="20000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', filename='images/מודעה ראשונה.jpg') }}" class="d-block w-100" alt="מודעה ראשונה">
+            </div>
+            <!-- הוסף תמונות נוספות -->
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/מודעה שניה.jpg') }}" class="d-block w-100" alt="מודעה שניה">
+            </div>
+            <div class="carousel-item">
+                <img src="{{ url_for('static', filename='images/מודעה פורים3.JPG') }}" class="d-block w-100" alt="מודעה פורים3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+ <section class="services">
+        <h2>השירותים שלנו</h2>
+        <div class="service">
+            <h3>צילום אירועים</h3>
+            <p>תפיסת הרגעים היפים והמרגשים מכל אירוע.</p>
+        </div>
+        <div class="service">
+            <h3>צילום פורטרטים</h3>
+            <p>צילומים אישיים בסגנון מקצועי בסטודיו או בטבע.</p>
+        </div>
+        <div class="service">
+            <h3>צילום מוצר</h3>
+            <p>צילומי מוצר ברמה גבוהה לשיווק יעיל ומקצועי.</p>
+        </div>
+    </section>
+</body>
+</html>
+<!-- הוספת jQuery (Bootstrap תלוי ב-JavaScript ו-jQuery) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- הוספת JavaScript של Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

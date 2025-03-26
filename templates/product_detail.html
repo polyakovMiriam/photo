@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.name }}</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/product_detail.css') }}">
+</head>
+
+<body>
+ {% include 'header.html' %}
+
+   <div class="product-detail-container">
+        <div class="left-side">
+         <form action="{{ url_for('orders.upload_images', product_id=product['id']) }}" method="POST" enctype="multipart/form-data">
+            <label for="images">בחר תמונות:</label>
+            <input type="file" id="images" name="images" multiple required>
+            <button type="submit">שמור</button>
+         </form>
+        </div>
+       <div class="uploaded-images">
+    {% for image in product['images'] %}
+        <img src="{{ url_for('static', filename=image.split('static/')[-1]) }}" alt="תמונה שהועלתה">
+    {% endfor %}
+</div>
+
+        <div class="right-side">
+            <img src="{{ url_for('static', filename=product['image']) }}" alt="{{ product['name'] }}">
+            <h1>{{ product['name'] }}</h1>
+            <p>מחיר: ₪{{ product['price'] }}</p>
+            <div class="quantity-container">
+                <label for="quantity">כמות:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+            </div>
+            <a href="#" onclick="addToCart('{{ product['id'] }}', event)" class="add-to-cart-btn">הוסף לסל</a>
+        </div>
+    </div>
+
+
+</body>
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <p> המוצר נוסף לסל הקניות בהצלחה!</p>
+        <button onclick="goToCart()">לסל הקניות שלי</button>
+        <span class="close-btn" onclick="closePopup()">X</span>
+    </div>
+</div>
+</html>
+<script>
+    function addToCart(productId, event) {
+        if (event) event.preventDefault(); // מונע מעבר לדף JSON
+
+        fetch(`/add_to_cart/${productId}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showPopup(); // מציג את הפופאפ רק אם ההוספה הצליחה
+                } else {
+                    alert('❗לא ניתן להוסיף את המוצר לסל הקניות.');
+                }
+            })
+            .catch(error => {
+                console.error('שגיאה בהוספת המוצר:', error);
+                alert('❗שגיאה בחיבור לשרת.');
+            });
+    }
+ function showPopup() {
+        const popup = document.getElementById('popup');
+        popup.style.display = 'flex'; // מציג את הפופאפ
+    }
+
+    function closePopup() {
+        const popup = document.getElementById('popup');
+        popup.style.display = 'none'; // מסתיר את הפופאפ
+    }
+
+    function goToCart() {
+        window.location.href = '/cart'; // מעבר לסל הקניות
+    }
+</script>
+
+
+

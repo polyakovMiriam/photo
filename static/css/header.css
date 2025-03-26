@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: lightgray;
+    color: black;
+    padding: 15px;
+    display: flex;
+    justify-content: center; /* ממרכז את כל התוכן */
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* מבטיח שהתפריט יישאר בשורה */
+}
+
+nav ul li {
+    margin: 0 20px; /* רווח שווה משני הצדדים */
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+     transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color:grey ;
+}
+
+nav .dropdown {
+    position: relative;
+}
+
+nav .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 150px;
+}
+
+nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+nav .dropdown-menu li {
+    padding: 8px 12px;
+}
+
+nav .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}

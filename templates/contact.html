@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/body.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>צור קשר</title>
+
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <section class="contact">
+        <h1>צור קשר</h1>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <p class="{{ category }}">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="{{ url_for('contact.contact') }}" method="POST">
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">דוא"ל:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">הודעה:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">שלח</button>
+        </form>
+    </section>
+<!-- במקום קוד בתוך הדף -->
+    <script src="/static/js/contact.js"></script>
+</body>
+</html>
